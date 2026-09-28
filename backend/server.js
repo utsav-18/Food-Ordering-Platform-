@@ -10,22 +10,26 @@ const foods = [
     {
         id: 1,
         name: "Chicken Burger",
-        price: 199
+        price: 199,
+        symbol :'🍔'
     },
     {
         id: 2,
-        name: "Margherita Pizza",
-        price: 299
+        name: "Water Melon",
+        price: 89,
+        symbol :'🍉'
     },
     {
         id: 3,
-        name: "French Fries",
-        price: 99
+        name: "Apple",
+        price: 99,
+        symbol :'🍎'
     },
     {
         id: 4,
-        name: "Chicken Biryani",
-        price: 249
+        name: "Cake",
+        price: 159,
+        symbol :'🍰'
     }
 ];
 
