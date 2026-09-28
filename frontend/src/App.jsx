@@ -1,17 +1,32 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react'
 
 
 function App() {
+  
+  const [order, setOrder] = useState(null);
+  
+  useEffect(()=>{
+    fetch("http://localhost:8080/orders")
+    .then((response)=>response.json())
+    .then((data)=>{
+      setOrder(data);
+    })
+  },[]);
+
   return (
     <>
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-5xl font-bold text-red-500">
-        Food Ordering App 🍔
-        
-      </h1>
+      <div>
+          <h1>Food Odering Website</h1>
+          {order &&(
+            <div>
+              <h2>{order.food}</h2>
+              <p>Price:${order.price}</p>
+              
+            </div>
+          )}
+      </div>
+
       
-    </div>
     </>
   )
 }
