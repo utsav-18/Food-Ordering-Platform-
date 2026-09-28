@@ -61,7 +61,7 @@ return (
                             </span>
 
                             <button
-                                className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-4 py-2 rounded-lg transition"
+                                className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-4 py-2 rounded-lg transition cursor-pointer"
                             >
                                 Add
                             </button>
