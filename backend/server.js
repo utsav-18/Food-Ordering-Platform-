@@ -6,16 +6,36 @@ const port = 8080;
 
 app.use(cors());
 
-app.get('/',(req,res)=> {
-    res.send("Hello World");
+const foods = [
+    {
+        id: 1,
+        name: "Chicken Burger",
+        price: 199
+    },
+    {
+        id: 2,
+        name: "Margherita Pizza",
+        price: 299
+    },
+    {
+        id: 3,
+        name: "French Fries",
+        price: 99
+    },
+    {
+        id: 4,
+        name: "Chicken Biryani",
+        price: 249
+    }
+];
+
+
+app.get("/", (req, res) => {
+    res.send("Food Ordering Backend");
 });
 
-app.get('/orders',(req,res)=> {
-    res.json({
-        food:"Chicken Burger",
-        price:189,
-
-    });
+app.get("/foods",(req,res)=>{
+    res.json(foods);
 });
 
 app.listen(port,()=>{

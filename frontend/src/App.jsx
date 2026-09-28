@@ -1,34 +1,31 @@
-import { useEffect, useState } from 'react'
-
+import { useEffect, useState } from "react";
 
 function App() {
-  
-  const [order, setOrder] = useState(null);
-  
-  useEffect(()=>{
-    fetch("http://localhost:8080/orders")
-    .then((response)=>response.json())
-    .then((data)=>{
-      setOrder(data);
-    })
-  },[]);
 
-  return (
-    <>
-      <div>
-          <h1>Food Odering Website</h1>
-          {order &&(
-            <div>
-              <h2>{order.food}</h2>
-              <p>Price:${order.price}</p>
-              
-            </div>
-          )}
-      </div>
+    const [foods, setFoods] = useState([]);
 
-      
-    </>
-  )
+    useEffect(() => {
+
+        fetch("http://localhost:8080/foods")
+            .then((response) => response.json())
+            .then((data) => {
+                setFoods(data);
+            });
+
+    }, []);
+
+    return (
+        <div>
+            <h1>Food Ordering Website</h1>
+
+            {foods.map((food) => (
+                <div key={food.id}>
+                    <h2>{food.name}</h2>
+                    <p>₹{food.price}</p>
+                </div>
+            ))}
+        </div>
+    );
 }
 
-export default App
+export default App;
