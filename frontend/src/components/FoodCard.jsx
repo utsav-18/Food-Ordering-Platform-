@@ -8,13 +8,19 @@ function FoodCard({ food, cart, setCart }) {
         });
 
     };
-        const removeFromCart = () => {
+    const removeFromCart = () => {
+
+        const currentQuantity = cart[food.id] || 0;
+
+        if (currentQuantity === 0) {
+            alert("You didn't add this item");
+            return;
+        }
 
         setCart({
             ...cart,
-            [food.id]: (cart[food.id] || 0) - 1
+            [food.id]: currentQuantity - 1
         });
-
     };
 
     return (
