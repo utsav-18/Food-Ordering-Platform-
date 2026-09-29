@@ -4,7 +4,7 @@ function Footer() {
 
             <div className="max-w-6xl mx-auto px-6 py-6 text-center">
 
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-600">
                      Foodies • Built with React & Node.js
                 </p>
 
