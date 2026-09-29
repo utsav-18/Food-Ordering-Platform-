@@ -5,6 +5,7 @@ const app = express();
 const port = 8080;
 
 app.use(cors());
+app.use(express.json());
 
 const foods = [
     {
@@ -42,6 +43,17 @@ app.get("/", (req, res) => {
 
 app.get("/foods", (req, res) => {
     res.json(foods);
+});
+
+app.post("/orders", (req, res) => {
+
+    console.log("Order received from frontend:");
+    console.log(req.body);
+
+    res.status(201).json({
+        message: "Order received successfully"
+    });
+
 });
 
 app.listen(port, () => {

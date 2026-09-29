@@ -49,14 +49,14 @@ function FoodCard({ food, cart, setCart }) {
             <div className="flex flex-row gap-4">
                 <button
                     onClick={addToCart}
-                    className="mt-4 w-full bg-orange-500 text-white py-2 rounded-lg cursor-pointer"
+                    className="mt-4 w-full bg-orange-400 text-white py-2 rounded-lg cursor-pointer hover:bg-orange-500"
                 >
                     Add to Cart
                 </button>
 
                 <button
                     onClick={removeFromCart}
-                    className="mt-4 w-full bg-red-700 text-white py-2 rounded-lg cursor-pointer"
+                    className="mt-4 w-full bg-red-700 text-white py-2 rounded-lg cursor-pointer hover:bg-red-900"
                 >
                     Remove
                 </button>

@@ -1,3 +1,27 @@
+const placeOrder = async () => {
+    console.log("PLACE ORDER FUNCTION CALLED");
+
+    try {
+        const response = await fetch("http://localhost:8080/orders", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                message: "Hello from React"
+            })
+        });
+
+        const data = await response.json();
+
+        console.log("Backend response:", data);
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
+};
+
+
 function Cart({ cart, foods }) {
 
     const cartItems = foods.filter((food) => cart[food.id]);
@@ -61,11 +85,23 @@ function Cart({ cart, foods }) {
                         <span>₹{total}</span>
                     </div>
 
+                <button
+                    onClick={placeOrder}
+                    className="mt-4 w-full bg-orange-400 text-white py-2 rounded-lg cursor-pointer hover:bg-orange-500"
+                >
+                    Place Order
+                </button>
+
                 </div>
 
             )}
 
+           
+
         </section>
+
+
+
     );
 }
 
