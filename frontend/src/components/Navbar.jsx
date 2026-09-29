@@ -11,7 +11,7 @@ function Navbar({ cart }) {
                 <div className="flex items-center gap-2">
                     <span className="text-2xl">🍔</span>
                     <h1 className="text-xl font-bold text-gray-900">
-                        Foodies
+                        Foodies!
                     </h1>
                 </div>
 
