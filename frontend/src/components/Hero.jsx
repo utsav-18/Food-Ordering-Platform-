@@ -3,7 +3,7 @@ function Hero() {
         <section className="max-w-6xl mx-auto px-6 py-12">
             <div className="text-center">
 
-                <p className="text-orange-500 font-semibold mb-2">
+                <p className="text-orange-600 font-semibold mb-2">
                     Fresh • Fast • Delicious
                 </p>
 
