@@ -96,11 +96,7 @@ function Cart({ cart, foods }) {
 
             )}
 
-           
-
         </section>
-
-
 
     );
 }
